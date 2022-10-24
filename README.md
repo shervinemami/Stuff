@@ -4,12 +4,20 @@ Stuff
 Random files that some people might be interested in.
 
 <br>
-Calling the "run_kaldi.sh" script starts or stops Kaldi AG.
+*measure_typing_rate.py:*
+A script to measure instant keyboard typing rate (WPM & CPS). Simply run the script without any args, then type words or characters into it.
+I use this for measuring the latency of speech recognition typing rates. There are many online WPM tools but they usually require 60 seconds of typing, whereas this tool will print the speed between each character or word, hence is handy for doing small tests.
 
+
+<br>
+*run_kaldi.sh:*
+Calling the "run_kaldi.sh" script starts or stops Kaldi AG.
 eg: `/Core/SpeechRec/Kaldi_Dragonfly/run_kaldi.sh &`
 
-Whereas I normally run the "process_retained.py" script using this command, to remove my noise utterances every few months:
 
+<br>
+*process_retained.py:*
+I save a lot of my speech recognition recordings from Kaldi-active-grammar / Dragonfly into a "retain.tsv" file. I normally run the "process_retained.py" script using this command, to remove my noise utterances every few months:
 ```
 (cd /Core/SpeechRec/Kaldi_Dragonfly/ ; python3 ./process_retained.py ; cp retained/retain.tsv retained/retain.tsv.old ; mv retained/processed.tsv retained/retain.tsv)
 ```
